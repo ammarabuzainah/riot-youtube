@@ -1,0 +1,19 @@
+CREATE TABLE USER_STATISTICS WITH (KAFKA_TOPIC='row_user_data', VALUE_FORMAT='AVRO', VALUE_SCHEMA_ID = 72, KEY_FORMAT='KAFKA')
+AS SELECT
+    AVG(`latestLikes`) AS `avgLikes`,
+    AVG(`latestViews`) AS `avgViews`,
+    AVG(`latestComments`) AS `avgComments`,
+    as_value (`userId`) `userId`, `userId` as `user`
+
+FROM
+    video_statistics
+GROUP BY
+    `userId`
+EMIT CHANGES;
+
+# TOTAL DURATION MAKE SURE TO CONVERT IT TO MINUTES
+# COUNT VIDEOS PER USER
+# CONSECUTIVE DAYS
+# SELECT  USER_ID ,COUNT_DISTINCT(VIDEO_ID) FROM VIDEO_DATA_STREAM  GROUP BY (USER_ID) EMIT CHANGES;
+
+

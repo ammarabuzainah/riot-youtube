@@ -1,0 +1,34 @@
+import requests
+from confluent_kafka import SerializingProducer
+from confluent_kafka.schema_registry.avro import AvroSerializer
+import json
+from schema_registry import get_schema_from_schema_registry
+
+with open('another_youtube_data.json', 'r') as file:
+    json_data = json.load(file)
+
+def avro_producer(kafka_url, schema_registry_url, schema_registry_subject):
+    sr, latest_version = get_schema_from_schema_registry(schema_registry_url, schema_registry_subject)
+
+    value_avro_serializer = AvroSerializer(schema_registry_client = sr,
+                                          schema_str = latest_version.schema.schema_str,
+                                          conf={
+                                              'auto.register.schemas': False
+                                            }
+                                          )
+
+    producer = SerializingProducer({
+        'bootstrap.servers': kafka_url,
+        'security.protocol': 'plaintext',
+        'value.serializer': value_avro_serializer,
+        'delivery.timeout.ms': 120000,
+        'enable.idempotence': 'true'
+    })
+
+    return producer
+
+producer = avro_producer('localhost:9099', 'http://localhost:8081', 'youtube')
+
+for dd in json_data:
+    producer.produce(topic='youtube', value=dd, key=dd['channel_id'])
+    producer.flush()

@@ -1,0 +1,25 @@
+
+{
+  "type": "record",
+  "name": "VideoData",
+  "namespace": "com.example",
+  "fields": [
+
+    {"name": "channelId", "type": "string", "doc": "The unique identifier of the channel."},
+    {"name": "userId", "type": "string", "doc": "The unique identifier of the user."},
+    {"name": "liveStatus", "type": "string", "doc": "The live status of the video."},
+    {"name": "categoryId", "type": "int", "doc": "The category ID of the video."},
+    {"name": "description", "type": "string", "doc": "A description of the video."},
+    {"name": "title", "type": "string", "doc": "The title of the video."},
+    {"name": "tags", "type": {"type": "array", "items": "string"}, "doc": "A list of tags associated with the video."},
+    {"name": "duration", "type": "double", "doc": "The duration of the video in seconds."},
+    {"name": "publishedAt", "type": "long", "doc": "The publication timestamp of the video."},
+    {"name": "avgLikes", "type": "double", "doc": "Average likes."},
+    {"name": "avgViews", "type": "double", "doc": "Average views."},
+    {"name": "avgComments", "type": "double", "doc": "Average comments."},
+    {"name": "latestViews", "type": "int", "doc": "Latest views."},
+    {"name": "latestComments", "type": "int", "doc": "Latest Comments."},
+    {"name": "latestLikes", "type": "int", "doc": "Latest Likes"},
+    {"name": "videoId", "type": "string", "doc": "Video ID."}
+  ]
+}

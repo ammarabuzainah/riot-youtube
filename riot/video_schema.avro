@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "VideoData",
+  "namespace": "com.example",
+  "fields": [
+    {"name": "channel_id", "type": "string", "doc": "The unique identifier of the channel."},
+    {"name": "user_id", "type": "string", "doc": "The unique identifier of the user."},
+    {"name": "live_status", "type": "string", "doc": "The live status of the video."},
+    {"name": "category_id", "type": "int", "doc": "The category ID of the video."},
+    {"name": "avg_views", "type": "double", "doc": "Average views."},
+    {"name": "latest_views", "type": "int", "doc": "The number of views of the video."},
+    {"name": "video_id", "type": "string", "doc": "Video ID."}
+  ]
+}
+
+

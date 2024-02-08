@@ -1,0 +1,10 @@
+{
+
+    "name": "dummy",
+    "type": "record",
+    "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "user", "type": "int"},
+        {"name": "mrmr", "type": "boolean"}
+    ]
+}

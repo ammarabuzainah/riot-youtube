@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "ExperimentMrmr",
+  "namespace": "com.example",
+  "fields": [
+
+    {"name": "views", "type": "int", "doc": "The number of views of the video."},
+    {"name": "likes", "type": "int", "doc": "The number of likes of the video."}
+  ]
+}

@@ -1,0 +1,11 @@
+
+{
+  "type": "record",
+  "name": "StreamUserData",
+  "namespace": "com.example",
+  "fields": [
+    {"name": "totalDuration", "type": "double", "doc": "The duration of the video in seconds."},
+    {"name": "videoCount", "type": "long", "doc": "Number Of Videos"},
+    {"name": "userId", "type": "string", "doc": "The unique identifier of the user."}
+  ]
+}

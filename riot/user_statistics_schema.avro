@@ -1,0 +1,14 @@
+
+{
+  "type": "record",
+  "name": "VideoData1",
+  "namespace": "com.example",
+  "fields": [
+
+    {"name": "avgLikes", "type": "double", "doc": "Average likes."},
+    {"name": "avgViews", "type": "double", "doc": "Average views."},
+    {"name": "avgComments", "type": "double", "doc": "Average comments."},
+    {"name": "userId", "type": "string", "doc": "The unique identifier of the user."}
+
+  ]
+}

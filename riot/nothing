@@ -1,0 +1,13 @@
+
+
+CREATE USER_STATISTICS AS
+SELECT
+    AVG(latestLikes) AS `avgLikes`,
+    AVG(latestComments) AS `avgComments`,
+    AVG(latestViews) AS `avgViews`,
+    as_value (userId) `userId`, userId as `use`
+FROM
+    video_statistics
+GROUP BY
+    userId
+EMIT CHANGES;

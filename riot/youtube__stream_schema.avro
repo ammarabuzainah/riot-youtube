@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "name": "VideoData",
+  "namespace": "com.example",
+  "fields": [
+    {"name": "channel_id", "type": "string", "doc": "The unique identifier of the channel."},
+    {"name": "video_id", "type": "string", "doc": "The unique identifier of the video."},
+    {"name": "user_id", "type": "string", "doc": "The unique identifier of the user."},
+    {"name": "title", "type": "string", "doc": "The title of the video."},
+    {"name": "description", "type": "string", "doc": "A description of the video."},
+    {"name": "live_status", "type": "string", "doc": "The live status of the video."},
+    {"name": "category_id", "type": "int", "doc": "The category ID of the video."},
+    {"name": "views", "type": "int", "doc": "The number of views of the video."},
+    {"name": "likes", "type": "int", "doc": "The number of likes of the video."},
+    {"name": "n_comments", "type": "int", "doc": "The number of comments on the video."},
+    {"name": "duration", "type": "float", "doc": "The duration of the video in seconds."},
+    {"name": "published_at", "type": "long", "doc": "The publication timestamp of the video."},
+    {"name": "tags", "type": {"type": "array", "items": "string"}, "doc": "A list of tags associated with the video."},
+    {"name": "active_program", "type": {"type": "array", "items": "string"}, "doc": "A list of active programs associated with the video."}
+  ]
+}
+
